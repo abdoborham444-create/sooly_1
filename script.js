@@ -1,12 +1,14 @@
 let currentPage = 1;
 const totalPages = 6;
 
-// ===============================
-// PAGE NAVIGATION
-// ===============================
+
+/* ================= PAGE NAVIGATION ================= */
 
 function showPage(pageNumber) {
-    if (pageNumber < 1 || pageNumber > totalPages) return;
+
+    if (pageNumber < 1 || pageNumber > totalPages) {
+        return;
+    }
 
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
@@ -21,30 +23,41 @@ function showPage(pageNumber) {
 
     currentPage = pageNumber;
 
-    // Show confetti on final page
+    const pageIndicator = document.getElementById("pageIndicator");
+
+    if (pageIndicator) {
+        pageIndicator.textContent =
+            currentPage + " / " + totalPages;
+    }
+
     if (pageNumber === 6) {
         setTimeout(startConfetti, 300);
     }
 }
 
+
 function nextPage() {
+
     if (currentPage < totalPages) {
         showPage(currentPage + 1);
     }
+
 }
 
+
 function previousPage() {
+
     if (currentPage > 1) {
         showPage(currentPage - 1);
     }
+
 }
 
 
-// ===============================
-// KEYBOARD NAVIGATION
-// ===============================
+/* ================= KEYBOARD ================= */
 
 document.addEventListener("keydown", function(event) {
+
     if (event.key === "ArrowRight") {
         nextPage();
     }
@@ -52,12 +65,11 @@ document.addEventListener("keydown", function(event) {
     if (event.key === "ArrowLeft") {
         previousPage();
     }
+
 });
 
 
-// ===============================
-// MUSIC
-// ===============================
+/* ================= MUSIC ================= */
 
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
@@ -72,35 +84,77 @@ if (music && musicBtn) {
 
             music.play()
                 .then(function() {
+
                     musicPlaying = true;
-                    musicBtn.innerHTML = "♫ <span>Pause Our Song</span>";
+
+                    musicBtn.innerHTML =
+                        "♫ <span>Pause Our Song</span>";
+
                 })
                 .catch(function(error) {
+
                     console.log("Music error:", error);
 
                     alert(
                         "The song could not be played.\n\n" +
                         "Make sure the file is named exactly:\n" +
-                        "our-song.mp3\n\n" +
-                        "and is inside the music folder."
+                        "our-song.mp3"
                     );
+
                 });
 
         } else {
 
             music.pause();
+
             musicPlaying = false;
 
-            musicBtn.innerHTML = "♫ <span>Play Our Song</span>";
+            musicBtn.innerHTML =
+                "♫ <span>Play Our Song</span>";
+
         }
+
     });
 
 }
 
 
-// ===============================
-// FLOATING HEARTS
-// ===============================
+/* ================= RELATIONSHIP COUNTER ================= */
+
+function updateDaysCounter() {
+
+    /*
+       Relationship started:
+       09 / 12 / 2025
+    */
+
+    const startDate = new Date("2025-12-09T00:00:00");
+
+    const now = new Date();
+
+    const difference = now - startDate;
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const counter = document.getElementById("daysCounter");
+
+    if (counter) {
+
+        counter.textContent =
+            days.toLocaleString("en-US");
+
+    }
+
+}
+
+updateDaysCounter();
+
+setInterval(updateDaysCounter, 60000);
+
+
+/* ================= FLOATING HEARTS ================= */
 
 function createHeart() {
 
@@ -108,14 +162,18 @@ function createHeart() {
 
     heart.className = "floating-heart";
 
-    heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+    heart.innerHTML =
+        Math.random() > 0.5 ? "♡" : "♥";
 
     heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
     heart.style.bottom = "-30px";
 
     heart.style.fontSize =
-        (12 + Math.random() * 15) + "px";
+        12 + Math.random() * 15 + "px";
 
     heart.style.color = "#d89aa8";
 
@@ -133,20 +191,17 @@ function createHeart() {
     setTimeout(function() {
         heart.remove();
     }, 13000);
+
 }
 
-
-// Create hearts every second
 setInterval(createHeart, 1000);
 
 
-// ===============================
-// FLOATING HEART ANIMATION
-// ===============================
-
-const heartAnimation = document.createElement("style");
+const heartAnimation =
+    document.createElement("style");
 
 heartAnimation.innerHTML = `
+
 @keyframes floatHeart {
 
     0% {
@@ -163,22 +218,26 @@ heartAnimation.innerHTML = `
     }
 
     100% {
-        transform: translateY(-110vh) rotate(35deg);
+        transform:
+            translateY(-110vh)
+            rotate(35deg);
+
         opacity: 0;
     }
+
 }
+
 `;
 
 document.head.appendChild(heartAnimation);
 
 
-// ===============================
-// SPARKLES
-// ===============================
+/* ================= SPARKLES ================= */
 
 function createSparkle() {
 
-    const sparkle = document.createElement("div");
+    const sparkle =
+        document.createElement("div");
 
     sparkle.innerHTML = "✦";
 
@@ -193,7 +252,7 @@ function createSparkle() {
     sparkle.style.color = "#c8a261";
 
     sparkle.style.fontSize =
-        (7 + Math.random() * 9) + "px";
+        7 + Math.random() * 9 + "px";
 
     sparkle.style.zIndex = "5";
 
@@ -211,19 +270,19 @@ function createSparkle() {
 
         sparkle.style.transform =
             "scale(1.8) rotate(90deg)";
+
     });
 
     setTimeout(function() {
         sparkle.remove();
     }, 2000);
+
 }
 
 setInterval(createSparkle, 1300);
 
 
-// ===============================
-// CONFETTI
-// ===============================
+/* ================= CONFETTI ================= */
 
 function startConfetti() {
 
@@ -231,7 +290,8 @@ function startConfetti() {
 
         setTimeout(function() {
 
-            const piece = document.createElement("div");
+            const piece =
+                document.createElement("div");
 
             piece.style.position = "fixed";
 
@@ -245,11 +305,13 @@ function startConfetti() {
             piece.style.height = "11px";
 
             piece.style.background = [
+
                 "#d89aa8",
                 "#c8a261",
                 "#6b2d39",
                 "#e2d5de",
                 "#f8dce4"
+
             ][Math.floor(Math.random() * 5)];
 
             piece.style.zIndex = "2000";
@@ -268,34 +330,38 @@ function startConfetti() {
             }, 7500);
 
         }, i * 20);
+
     }
+
 }
 
 
-// ===============================
-// CONFETTI ANIMATION
-// ===============================
-
-const confettiAnimation = document.createElement("style");
+const confettiAnimation =
+    document.createElement("style");
 
 confettiAnimation.innerHTML = `
+
 @keyframes confettiFall {
 
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
 
     100% {
-        transform: translateY(110vh) rotate(720deg);
+        transform:
+            translateY(110vh)
+            rotate(720deg);
     }
+
 }
+
 `;
 
 document.head.appendChild(confettiAnimation);
 
 
-// ===============================
-// START WEBSITE
-// ===============================
+/* ================= START ================= */
 
 showPage(1);
