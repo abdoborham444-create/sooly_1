@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sooly ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Decorative Roses -->
+    <div class="rose rose-1">🌹</div>
+    <div class="rose rose-2">🌹</div>
+    <div class="rose rose-3">🌹</div>
+    <div class="rose rose-4">🌹</div>
+    <div class="rose rose-5">🌹</div>
+    <div class="rose rose-6">🌹</div>
+    <!-- Music -->
+    <audio id="bgMusic" loop>
+        <source src="our-song.mp3" type="audio/mpeg">
+    </audio>
+    <button id="musicBtn" class="music-btn">
+        ♫ <span>Play Our Song</span>
+    </button>
+    <!-- ========================= -->
+    <!-- PAGE 1 - HOME -->
+    <!-- ========================= -->
+    <section class="page active" id="page1">
+        <div class="page-content hero-page">
+            <p class="small-title">
+                A little something for
+            </p>
+            <h1>
+                My Beautiful Sooly
+            </h1>
+            <div class="hero-image">
+                <img src="hero.jpg" alt="Our favorite photo">
+            </div>
+            <p class="subtitle">
+                Happy Birthday, my love ❤️
+            </p>
+            <p class="intro">
+                I made this little corner of the internet
+                just for you.
+            </p>
+            <button class="main-btn" onclick="nextPage()">
+                Start Our Story
+            </button>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn disabled">
+                ← Previous
+            </button>
+            <button class="nav-btn" onclick="nextPage()">
+                Next →
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PAGE 2 - OUR STORY -->
+    <!-- ========================= -->
+    <section class="page" id="page2">
+        <div class="page-content">
+            <p class="small-title">
+                Our Story
+            </p>
+            <h2>
+                From the first moment...
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="date">13 / 11 / 2025</span>
+                    <h3>
+                        The Beginning
+                    </h3>
+                    <p>
+                        The day we met.
+                        I didn't know it at the time,
+                        but meeting you was going to become
+                        one of the most beautiful parts of my life.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">29 / 01 / 2026</span>
+                    <h3>
+                        Our First Drawing
+                    </h3>
+                    <p>
+                        One of those little moments
+                        that became a beautiful memory.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">29 / 01 / 2026</span>
+                    <h3>
+                        Our First Photo
+                    </h3>
+                    <p>
+                        The first picture of us together.
+                        One of the many memories I never want to forget.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">14 / 02 / 2026</span>
+                    <h3>
+                        Walking Around University
+                    </h3>
+                    <p>
+                        Just walking around with you
+                        somehow made an ordinary day feel special.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">18 / 02 / 2026</span>
+                    <h3>
+                        Matching Outfits
+                    </h3>
+                    <p>
+                        One of those cute little moments
+                        that I will always remember.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">02 / 05 / 2026</span>
+                    <h3>
+                        Our First Event
+                    </h3>
+                    <p>
+                        Our first event together
+                        and another beautiful memory added to our story.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">02 / 06 / 2026</span>
+                    <h3>
+                        Until We Graduate Together
+                    </h3>
+                    <p>
+                        And hopefully many more memories
+                        before we reach that day together.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">07 / 06 / 2026</span>
+                    <h3>
+                        Happy Hair, Happy Everything
+                    </h3>
+                    <p>
+                        A simple moment that made me smile.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">09 / 06 / 2026</span>
+                    <h3>
+                        Flowers
+                    </h3>
+                    <p>
+                        Because you deserve all the beautiful things
+                        in the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">
+                ← Previous
+            </button>
+            <button class="nav-btn" onclick="nextPage()">
+                Next →
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PAGE 3 - THINGS I LOVE -->
+    <!-- ========================= -->
+    <section class="page" id="page3">
+        <div class="page-content">
+            <p class="small-title">
+                Things I Love
+            </p>
+            <h2>
+                Things I Love About You
+            </h2>
+            <div class="love-grid">
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        Your Eyes
+                    </h3>
+                    <p>
+                        Your eyes are the most beautiful eyes
+                        in the whole world. I could get lost in them forever.
+                    </p>
+                </div>
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        Your Tenderness
+                    </h3>
+                    <p>
+                        You are the most tender and caring girl
+                        in the whole world. Your kindness and warmth
+                        make me feel incredibly lucky to have you.
+                    </p>
+                </div>
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        The Way You Care About Me
+                    </h3>
+                    <p>
+                        I love the way you care about me more than
+                        I can ever explain. Every little thing you do
+                        makes me feel loved and special.
+                    </p>
+                </div>
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        Your Laugh
+                    </h3>
+                    <p>
+                        Your laugh makes me forget all the worries
+                        in the world and turns me into the happiest
+                        person alive.
+                    </p>
+                </div>
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        Your Voice
+                    </h3>
+                    <p>
+                        Your voice is the most beautiful sound
+                        in the universe. I could listen to you forever
+                        and never get tired of it.
+                    </p>
+                </div>
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        Your Love For Me
+                    </h3>
+                    <p>
+                        I feel incredibly lucky that you chose me,
+                        loved me, and decided to have me in your life.
+                    </p>
+                </div>
+                <div class="love-card">
+                    <div class="card-icon">♡</div>
+                    <h3>
+                        You
+                    </h3>
+                    <p>
+                        Just you. You are the person I love the most
+                        in my entire life. I’m so lucky to have you.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">
+                ← Previous
+            </button>
+            <button class="nav-btn" onclick="nextPage()">
+                Next →
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PAGE 4 - MEMORIES -->
+    <!-- ========================= -->
+    <section class="page" id="page4">
+        <div class="page-content">
+            <p class="small-title">
+                Our Memories
+            </p>
+            <h2>
+                Little Moments,
+                Big Memories
+            </h2>
+            <div class="memory-grid">
+                <div class="memory-card">
+                    <img src="memory1.jpg" alt="Our first drawing">
+                    <p>Our first drawing together</p>
+                    <span>29 / 01 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory2.jpg" alt="Our first photo">
+                    <p>Our first photo together</p>
+                    <span>29 / 01 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory3.jpg" alt="Walking around university">
+                    <p>Walking around university</p>
+                    <span>14 / 02 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory4.jpg" alt="Matching outfits">
+                    <p>Matching outfits</p>
+                    <span>18 / 02 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory5.jpg" alt="Our first event">
+                    <p>Our first event together</p>
+                    <span>02 / 05 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory6.jpg" alt="Until we graduate together">
+                    <p>Until we graduate together</p>
+                    <span>02 / 06 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory7.jpg" alt="Happy hair">
+                    <p>Happy hair, happy everything</p>
+                    <span>07 / 06 / 2026</span>
+                </div>
+                <div class="memory-card">
+                    <img src="memory8.jpg" alt="Flowers">
+                    <p>Flowers for my favorite girl</p>
+                    <span>09 / 06 / 2026</span>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">
+                ← Previous
+            </button>
+            <button class="nav-btn" onclick="nextPage()">
+                Next →
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PAGE 5 - LETTER -->
+    <!-- ========================= -->
+    <section class="page" id="page5">
+        <div class="page-content letter-page">
+            <p class="small-title">
+                A Letter For You
+            </p>
+            <h2>
+                To My Beautiful Sooly
+            </h2>
+            <div class="letter">
+                <p>
+                    كل سنه وانتي اجمل واحلى حاجه حصلتلي في حياتي
+                    كل سنه وانتي جمبي وانتي حبيبتي وانتي روحي وانتي حياتي كلها
+                    كل سنه وانا متهني بقربك وفرحان بيكي ومبسوط بحنيتك
+                    وفخور بانجازاتك الصغيره قبل الكبيره وأسعد انسان على الارض
+                    بوجودك في حياتي كل سنه وانتي منوره حياتي بعيونك
+                    ومطمناني بوجودك ومريحاني بمعاملتك ليا
+                    ومخلياني اسعد انسان بحنيتك عليا
+                    ومجمله حياتي كلها بجمالك اللي مفيش زيه في الدنيا
+                </p>
+                <p>
+                    كل سنه وانتي اجمل بنوته في الدنيا
+                    واشطر فنانه في التاريخ واطيب واحن بنوته شافتها عيني
+                    وارق واعسل بنوته في الحياه
+                </p>
+                <p>
+                    كل سنه وانتي بتحلوي يوم بعد يوم
+                    كل سنه وجمالك بيزيد كل يوم
+                    كل سنه وعيونك سحراني
+                    كل سنه وجمالك مدوخني
+                    كل سنه وانتي في حياتي يا نور حياتي واجمل ما فيها
+                </p>
+                <p>
+                    حبيتك من اول لحظه شوفتك
+                    واختارتك بعقلي قبل قلبي
+                    وعايزك تبقي مراتي وطالب منك تكملي باقي حياتك معايا
+                </p>
+                <p>
+                    كل سنه وانتي طيبه ياحبيبتي وكل حياتي
+                    ويارب دايما بخير ومحققه كل اللي نفسك فيه
+                    وكل اللي بتحلمي بيه
+                    وباذن الله عيد ميلادنا الجاي نكون سوا
+                    وبنجهز لخطوبتنا
+                </p>
+                <div class="signature">
+                    Forever yours ❤️
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">
+                ← Previous
+            </button>
+            <button class="nav-btn" onclick="nextPage()">
+                Next →
+            </button>
+        </div>
+    </section>
+    <!-- ========================= -->
+    <!-- PAGE 6 - FINAL -->
+    <!-- ========================= -->
+    <section class="page" id="page6">
+        <div class="page-content final-page">
+            <p class="small-title">
+                And finally...
+            </p>
+            <h1>
+                Happy Birthday,
+                My Love ❤️
+            </h1>
+            <div class="final-photo">
+                <img src="sooly-final.jpg" alt="My beautiful Sooly">
+            </div>
+            <p class="final-message">
+                You have the kindest heart in the world.
+            </p>
+            <p class="forever">
+                I love you more than words could ever explain.
+            </p>
+            <div class="hearts">
+                ♡ ♥ ♡
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">
+                ← Previous
+            </button>
+            <button class="nav-btn disabled">
+                Next →
+            </button>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
